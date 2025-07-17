@@ -1,4 +1,6 @@
+document.body.style.overflow = "hidden";
 var tl = gsap.timeline();
+
 function loader() {
 
     tl.from(".line h1", {
@@ -20,7 +22,7 @@ function loader() {
                 else {
                     timerH5.innerHTML = timerGrow;
                 }
-            }, 2);//20
+            }, 20);
         },
     })
     tl.to(".line h2", {
@@ -30,20 +32,16 @@ function loader() {
     })
     tl.to("#loader", {
         opacity: 0,
-        delay: 0,//1.7
-        duration: 0,//.3
-    })
-
-    tl.from("#page1", {
-        y: "100%",
-        opacity: 0,
-        duration: .5,
-        delay: .2,
-        ease: "sine.out",
+        delay: 1.7,
+        duration: 0.3,
     })
 
     tl.to("#loader", {
         display: "none",
+        onComplete: function() {
+            document.body.style.overflow = "auto"; // Add this here
+            window.scrollTo(0, 0); // Optional: reset scroll position
+        }
     })
 
 };
