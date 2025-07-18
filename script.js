@@ -22,7 +22,7 @@ function loader() {
                 else {
                     timerH5.innerHTML = timerGrow;
                 }
-            }, 20);
+            }, 20);//20
         },
     })
     tl.to(".line h2", {
@@ -32,15 +32,15 @@ function loader() {
     })
     tl.to("#loader", {
         opacity: 0,
-        delay: 1.7,
-        duration: 0.3,
+        delay: 1.7,//1.7
+        duration: .3,//.3
     })
 
     tl.to("#loader", {
         display: "none",
         onComplete: function() {
             document.body.style.overflow = "auto"; // Add this here
-            window.scrollTo(0, 0); // Optional: reset scroll position
+            window.scrollTo(0, 0); // fOptional: reset scroll position
         }
     })
 
